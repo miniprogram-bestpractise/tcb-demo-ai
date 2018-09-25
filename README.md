@@ -34,20 +34,6 @@ project
 ...
 ```
 
-### 填入云小程序环境 id
-
-`client/app.js`
-```javascript
-App({
-    onLaunch: function () {
-        wx.cloud.init({
-            env: '',
-            traceUser: true
-        });
-    },
-});
-```
-
 ### 为需要云函数填入云服务相关配置
 
 `cloud/functions/*/index.js`
@@ -80,6 +66,9 @@ npm install --production
 ```
 
 完成上以步骤，你便可以用微信开发者 `IDE` 预览该小程序的 `DEMO`
+
+## 体验
+点击小程序开发IDE中的“预览”，用微信扫一扫即可体验
 
 
 ## 使用组件
