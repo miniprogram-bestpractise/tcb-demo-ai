@@ -31,11 +31,19 @@ exports.main = async (event) => {
     const imageBase64 = image.toString('base64');
     const result = await imgClient.faceFuse({
         data: {
+<<<<<<< HEAD
           uin: event.uin || config.uin || '',
           project_id: event.project_id || config.project_id || '',
           model_id: event.model_id || config.model_id || '',
           img_data: imageBase64,
           rsp_img_type: 'url'
+=======
+            uin: '',
+            project_id: '',
+            model_id: '',
+            img_data: imageBase64,
+            rsp_img_type: 'url'
+>>>>>>> 37ff5433cab98c2b2159c4a7394249916ac11c48
         },
     });
     return JSON.parse(result.body);

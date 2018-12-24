@@ -10,7 +10,7 @@
         {{uploadText}}
       </button>
       <button
-        type="pr`mary"
+        type="primary"
         disabled="{{!hasUploaded}}"
         bindtap="handleRecognizeTap"
       >

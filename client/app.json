@@ -12,7 +12,6 @@
     "pages/tagDetect/tagDetect",
     "pages/pornDetect/pornDetect",
     "pages/faceFuse/faceFuse",
-    "verify_mpsdk/index/index",
     "pages/idCardLiveDetectFour/index"
   ],
   "window": {
