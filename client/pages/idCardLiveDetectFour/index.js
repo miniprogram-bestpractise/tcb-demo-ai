@@ -160,7 +160,7 @@ Page({
       })
 
       wx.hideLoading()
-      if (!result.data.code && !result.data.data.compare_status) {
+      if (!result.code && !result.data.compare_status) {
         wx.showToast({
           title: '验证成功',
           mask: true

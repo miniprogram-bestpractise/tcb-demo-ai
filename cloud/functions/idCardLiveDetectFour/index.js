@@ -36,11 +36,8 @@ exports.main = async (event) => {
     formData,
   });
 
-  console.log(formData)
 
-  console.log('=================result===========')
   let ret = JSON.parse(result.body)
-  console.log(ret)
   console.log(ret.data.live_status)
   console.log(ret.data.live_msg)
   console.log(ret.data.compare_status)
@@ -48,8 +45,5 @@ exports.main = async (event) => {
   console.log(ret.code)
   console.log(ret.message)
 
-  return {
-    data: ret,
-    event
-  }
+  return ret
 }
