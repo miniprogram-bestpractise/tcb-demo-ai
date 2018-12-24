@@ -1,0 +1,1 @@
+<template name="auth_template"><view class="auth-bg"></view><view class="auth-main"><view class="auth-info">{{authInfo}}</view><button open-type="openSetting" class="auth-btn-set"><image src="http://beta.gtimg.com/GodIdent/huiyan/img/icon42_appwx_logo.png"></image>打开授权设置</button></view></template>

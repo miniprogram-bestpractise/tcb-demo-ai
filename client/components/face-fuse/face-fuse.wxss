@@ -1,0 +1,55 @@
+.image-container {
+  padding: 30rpx;
+}
+
+.customImage {
+  display: inline-block;
+  width: 50%;
+  padding-bottom: 75%;
+  height: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.templateImage {
+  display: inline-block;
+  width: 50%;
+  padding-bottom: 75%;
+  height: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.resultImage {
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 75%;
+  height: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.hideTemplate .customImage {
+  width: 100%;
+}
+
+.hideTemplate .templateImage {
+  display: none;
+}
+
+button {
+  display: inline-block;
+  width: 48%;
+  margin: 0 1%;
+}
+
+canvas {
+  display: none;
+}
+
+.button-container {
+  text-align: center;
+}
