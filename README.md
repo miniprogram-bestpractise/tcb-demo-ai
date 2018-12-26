@@ -49,12 +49,12 @@
 }
 ``` 
 
-## API 文档
+## 组件 API 文档
 
 以下是各个组件的 `API` 使用文档
 
 ### ocr 组件
-### 属性
+#### 属性
 
 |属性名|含义|必填|默认值|
 |--|--|--|--|
@@ -64,7 +64,7 @@
 |imgUrl|默认图片 url|否|略|
 |type|对象类型(仅在`drivingLicence`模式中有效)|否|0|
 
-#### mode 有效值
+##### mode 有效值
 
 |值|含义|对应云函数名|
 |--|--|--|
@@ -77,13 +77,13 @@
 |bankCard|银行卡识别|bankCard|
 |bizCard|名片识别（V2)|bizCard|
 
-### 事件
+#### 事件
 
 |事件名|触发条件|
 |--|--|
 |finish|识别完成|
 
-#### finish 事件对象属性
+##### finish 事件对象属性
 
 |属性|类型|说明|
 |--|--|--|
@@ -92,7 +92,7 @@
 |detail|Object|识别结果，参考[腾讯云文字识别 API 文档](https://cloud.tencent.com/document/product/866/17594)|
 
 ### img-detect 组件
-### 属性
+#### 属性
 
 |属性名|含义|必填|默认值|
 |--|--|--|--|
@@ -101,19 +101,19 @@
 |mode|识别模式|是|<center>-</center>|
 |imgUrl|默认图片 url|否|略|
 
-#### mode 有效值
+##### mode 有效值
 |值|含义|对应云函数名|
 |--|--|--|
 |pornDetect|图片鉴黄|pornDetect|
 |tagDetect|图片标签识别|tagDetect|
 
-### 事件
+#### 事件
 
 |事件名|触发条件|
 |--|--|
 |finish|识别完成|
 
-#### finish 事件对象属性
+##### finish 事件对象属性
 
 |属性|类型|说明|
 |--|--|--|
@@ -122,7 +122,7 @@
 |detail|Object|识别结果，参考[腾讯云图片标签 API 文档](https://cloud.tencent.com/document/product/865/17592)以及[腾讯云智能鉴黄 API 文档](https://cloud.tencent.com/document/product/864/17609)|
 
 ### face-fuse 组件
-### 属性
+#### 属性
 
 |属性名|含义|必填|默认值|
 |--|--|--|--|
@@ -134,13 +134,13 @@
 
 注：templateImgUrl 指定的图片仅供展示，融合中使用的模板图片由云函数的参数指定。
 
-### 事件
+#### 事件
 
 |事件名|触发条件|
 |--|--|
 |finish|识别完成|
 
-#### finish 事件对象属性
+##### finish 事件对象属性
 
 |属性|类型|说明|
 |--|--|--|
@@ -148,5 +148,5 @@
 |type|String|事件类型|
 |detail|String|融合结果图片 url|
 
-### 对应云函数
+#### 对应云函数
 * faceFuse
