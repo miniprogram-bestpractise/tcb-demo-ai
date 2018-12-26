@@ -1,79 +1,21 @@
-# 小程序 AI 服务 DEMO
+# 小程序·云开发AI智能图像解决方案
 
 基于小程序云开发的 AI DEMO，使用腾讯云智能图像服务
 
-![界面展示](https://ask.qcloudimg.com/draft/1011618/3v4vl26ls1.jpg)
-
-## 项目结构
-```
-project
- ├── client               # 客户端代码
- │    ├── lib             # 外部库
- │    ├── pages           # demo 页面
- │    ├── components      # AI 组件代码
- │    └── utils           # 工具
- ├── cloud                # 腾讯云服务相关文件
- │    ├── cos             # 对象存储
- │    ├── database        # 数据库
- │    └── functions       # 云函数
- ├── config               # 配置文件
- ├── server               # 服务端代码
- └── project.config.json  # 项目配置文件
-```
-
-## 预览 DEMO
-
-### 下载或clone代码包
-```javascript
-git clone https://github.com/TencentCloudBase/tcb-demo-ai.git
-```
-
-### 填入小程序 appid
-用[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html)，打开上一步下载下来的代码仓库，填入小程序的 appid（使用云开发能力必须填写 appid）。
-
-### 为需要云函数填入云服务相关配置
-
-`cloud/functions/*/index.js`
-```javascript
-...
-const AppId = ''; // 腾讯云 AppId
-const SecretId = ''; // 腾讯云 SecretId
-const SecretKey = ''; // 腾讯云 SecretKey
-...
-```
-
-如果使用人脸融合功能还需要额外填写人脸融合服务相关字符串
-`cloud/functions/faceFuse/index.js`
-```javascript
-...
-    data: {
-        uin: '',
-        project_id: '',
-        model_id: '',
-        img_data: imageBase64,
-        rsp_img_type: 'url'
-    },
-...
-```
-
-- 上传云函数
-在云函数函数目录下（每个AI函数下面）安装依赖，并用开发 `IDE` 上传
-```javascript
-npm install --production
-```
-
-完成上以步骤，你便可以用微信开发者 `IDE` 预览该小程序的 `DEMO`
+## 注意事项
+- 教程在：[小程序·云开发系列教程](https://github.com/TencentCloudBase/mp-book)
+- 打开的时候记得填写 `project.config.json` 中的 `appid` 字段，其它功能的试用，请参考教程里的[小程序中级场景及开发教学](https://github.com/TencentCloudBase/mp-book/blob/master/medium-tutorial/ai.md) 进行配置试用。
 
 ## 体验
-点击小程序开发IDE中的“预览”，用微信扫一扫即可体验
 
+敬请期待
 
 ## 使用组件
 
 如果你想使用小程序 AI 自定义组件，你可以按照以下步骤进行。
 
 ### 复制并使用自定义 AI 组件
-将 `client/components/` 中其中一个组件复制到你的项目中的组件存放位置（lib目录也需要复制，因为用到了 `weui` 的样式)，在页面的 `json` 文件中进行引用声明。
+将 `client/components/` 中其中一个组件复制到你的项目中的组件存放位置（`lib` 目录也需要复制，因为用到了 `weui` 的样式)，在页面的 `json` 文件中进行引用声明。
 
 ```json
 {
@@ -109,6 +51,8 @@ npm install --production
 
 ## API 文档
 
+以下是各个组件的 `API` 使用文档
+
 ### ocr 组件
 ### 属性
 
@@ -122,16 +66,16 @@ npm install --production
 
 #### mode 有效值
 
-|值|含义|
-|--|--|
-|handWriting|手写体识别|
-|idCard|身份证识别|
-|bizLicense|营业执照识别|
-|drivingLicence|行驶证驾驶证识别|
-|plate|车牌号识别|
-|general|通用印刷体识别|
-|bankCard|银行卡识别|
-|bizCard|名片识别（V2)|
+|值|含义|对应云函数名|
+|--|--|--|
+|handWriting|手写体识别|handWriting|
+|idCard|身份证识别|idCard|
+|bizLicense|营业执照识别|bizLicense|
+|drivingLicence|行驶证驾驶证识别|drivingLicence|
+|plate|车牌号识别|plate|
+|general|通用印刷体识别|general|
+|bankCard|银行卡识别|bankCard|
+|bizCard|名片识别（V2)|bizCard|
 
 ### 事件
 
@@ -158,10 +102,10 @@ npm install --production
 |imgUrl|默认图片 url|否|略|
 
 #### mode 有效值
-|值|含义|
-|--|--|
-|pornDetect|图片鉴黄|
-|tagDetect|图片标签识别|
+|值|含义|对应云函数名|
+|--|--|--|
+|pornDetect|图片鉴黄|pornDetect|
+|tagDetect|图片标签识别|tagDetect|
 
 ### 事件
 
@@ -203,3 +147,6 @@ npm install --production
 |timeStamp|Number|事件触发事件|
 |type|String|事件类型|
 |detail|String|融合结果图片 url|
+
+### 对应云函数
+* faceFuse
