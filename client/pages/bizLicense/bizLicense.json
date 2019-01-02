@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "营业执照识别",
   "usingComponents": {
     "ocr": "/components/ocr/ocr"
   }

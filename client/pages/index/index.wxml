@@ -1,61 +1,126 @@
-<view class="weui-cells__title">人脸融合</view>
-<view class="weui-cells weui-cells_after-title">
-    <navigator url="/pages/faceFuse/faceFuse" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">人脸融合</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
-</view>
-<view class="weui-cells__title">图片识别</view>
-<view class="weui-cells weui-cells_after-title">
-    <navigator url="/pages/tagDetect/tagDetect" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">图片标签</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
-    <navigator url="/pages/pornDetect/pornDetect" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">图片鉴黄</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
-</view>
-<view class="weui-cells__title">文字识别</view>
-<view class="weui-cells weui-cells_after-title">
-    <navigator url="/pages/handWriting/handWriting" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">手写体识别</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
-    <navigator url="/pages/idCard/idCard" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">身份证识别</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
-    <navigator url="/pages/bizLicense/bizLicense" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">营业执照识别</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
-    <navigator url="/pages/drivingLicence/drivingLicence" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">行驶证驾驶证识别</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
-    <navigator url="/pages/plate/plate" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">车牌号识别</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
-    <navigator url="/pages/general/general" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">通用印刷体识别</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
-    <navigator url="/pages/bankCard/bankCard" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">银行卡识别</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
-    <navigator url="/pages/bizCard/bizCard" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">名片识别</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
-</view>
+<view class="index">
+  <view class="index-hd">
+    <image class="index-logo" src="/resources/images/tencentcloud.png"></image>
+    <view class="index-desc">以下将演示基于小程序·云开发所研发的智能图像解决方案</view>
+  </view>
+  <view class="index-bd">
+    <view class="kind-list">
+      <!-- 人脸融合 -->
+      <view class="weui-cells__title">人脸融合</view>
+      <view class="kind-list-item">
+        <navigator
+          url="/pages/faceFuse/faceFuse"
+          class="kind-list-item-hd"
+        >
+          <view class="kind-list-text">人脸融合</view>
+        </navigator>
+      </view>
 
-<view class="weui-cells__title">人脸核身</view>
-<view class="weui-cells weui-cells_after-title">
-    <navigator url="/pages/idCardLiveDetectFour/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-        <view class="weui-cell__bd">人脸融合</view>
-        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-    </navigator>
+      <!-- 图片识别 -->
+      <view class="weui-cells__title">图片识别</view>
+      <view class="kind-list-item">
+        <navigator
+          url="/pages/tagDetect/tagDetect"
+          class="kind-list-item-hd"
+        >
+          <view class="kind-list-text">图片标签</view>
+        </navigator>
+      </view>
+      <view class="kind-list-item">
+        <navigator
+          url="/pages/pornDetect/pornDetect"
+          class="kind-list-item-hd"
+        >
+          <view class="kind-list-text">图片鉴黄</view>
+        </navigator>
+      </view>
+
+      <!-- 文字识别 -->
+      <view class="weui-cells__title">文字识别</view>
+      <view class="kind-list-item">
+        <navigator
+          url="/pages/handWriting/handWriting"
+          class="kind-list-item-hd"
+        >
+          <view class="kind-list-text">手写体识别</view>
+        </navigator>
+      </view>
+      <view class="kind-list-item">
+        <navigator
+          url="/pages/idCard/idCard"
+          class="kind-list-item-hd"
+        >
+          <view class="kind-list-text">身份证识别</view>
+        </navigator>
+      </view>
+      <view class="kind-list-item">
+        <navigator
+          url="/pages/bizLicense/bizLicense"
+          class="kind-list-item-hd"
+        >
+          <view class="kind-list-text">营业执照识别</view>
+        </navigator>
+      </view>
+      <view class="kind-list-item">
+        <navigator
+          url="/pages/drivingLicence/drivingLicence"
+          class="kind-list-item-hd"
+        >
+          <view class="kind-list-text">行驶证驾驶证识别</view>
+        </navigator>
+      </view>
+      <view class="kind-list-item">
+        <navigator
+          url="/pages/plate/plate"
+          class="kind-list-item-hd"
+        >
+          <view class="kind-list-text">车牌号识别</view>
+        </navigator>
+      </view>
+      <view class="kind-list-item">
+        <navigator
+          url="/pages/general/general"
+          class="kind-list-item-hd"
+        >
+          <view class="kind-list-text">通用印刷体识别</view>
+        </navigator>
+      </view>
+      <view class="kind-list-item">
+        <navigator
+          url="/pages/bankCard/bankCard"
+          class="kind-list-item-hd"
+        >
+          <view class="kind-list-text">银行卡识别</view>
+        </navigator>
+      </view>
+      <view class="kind-list-item">
+        <navigator
+          url="/pages/bizCard/bizCard"
+          class="kind-list-item-hd"
+        >
+          <view class="kind-list-text">名片识别</view>
+        </navigator>
+      </view>
+
+      <!-- 文字识别 -->
+      <view class="weui-cells__title">人脸核身</view>
+      <view class="kind-list-item">
+        <navigator
+          url="/pages/idCardLiveDetectFour/index"
+          class="kind-list-item-hd"
+        >
+          <view class="kind-list-text">活体检测--唇语验证</view>
+        </navigator>
+      </view>
+      
+    </view>
+  </view>
+
+  <view class="index-bd">
+    <view class="index-desc">开发教程及源码：</view>
+    <view class="index-desc">https://github.com/TencentCloudBase/mp-book</view>
+  </view>
+
+  <official-account></official-account>
+  
 </view>

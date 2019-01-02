@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "名片识别",
   "usingComponents": {
     "ocr": "/components/ocr/ocr"
   }

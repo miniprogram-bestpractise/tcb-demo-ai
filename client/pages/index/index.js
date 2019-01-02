@@ -1,4 +1,4 @@
 /* global getApp, Page */
 Page({
-    data: {},
+    data: {}
 });

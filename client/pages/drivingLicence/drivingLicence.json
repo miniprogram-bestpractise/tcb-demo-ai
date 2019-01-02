@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "行驶证驾驶证识别",
   "usingComponents": {
     "ocr": "/components/ocr/ocr"
   }
