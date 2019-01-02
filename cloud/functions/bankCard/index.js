@@ -12,5 +12,14 @@ exports.main = async (event) => {
           url: imageUrl,
       },
   });
-  return JSON.parse(result.body).data;
+
+  const data = JSON.parse(result.body)
+
+  if (!data.code && data.data) {
+    return data.data
+  }
+  else {
+    return data
+  }
+
 };

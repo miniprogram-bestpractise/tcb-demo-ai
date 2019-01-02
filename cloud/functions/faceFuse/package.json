@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "image-node-sdk": "^1.0.2"
+    "image-node-sdk": "^1.0.5"
   }
 }

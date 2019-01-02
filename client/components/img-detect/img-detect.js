@@ -100,7 +100,7 @@ Component({
                 wx.hideLoading();
                 if (!result || result.code) {
                     wx.showToast({
-                        title: '识别失败',
+                        title: '识别失败: ' + result.message,
                         icon: 'none',
                     });
                     return;

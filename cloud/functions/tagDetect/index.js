@@ -6,11 +6,12 @@ const imgClient = new ImageClient({
 });
 
 exports.main = async (event) => {
-    const imageUrl = event.url;
-    const result = await imgClient.imgTagDetect({
-        data: {
-            url: imageUrl,
-        }
-    });
-    return JSON.parse(result.body);
+  const imageUrl = event.url;
+  const result = await imgClient.imgTagDetect({
+      data: {
+          url: imageUrl,
+      }
+  });
+  
+  return JSON.parse(result.body);
 };

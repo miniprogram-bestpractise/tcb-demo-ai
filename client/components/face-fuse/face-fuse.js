@@ -93,17 +93,17 @@ Component({
             }).then(({ result }) => {
               console.log(result);
               wx.hideLoading();
-              if (!result || !result.img_url) {
+              if (!result || result.code || !result.Image) {
                   wx.showToast({
-                      title: '融合失败',
+                      title: '融合失败: ' + result.message,
                       icon: 'none',
                   });
                   return;
               }
               this.setData({
-                  resultImgUrl: result.img_url
+                  resultImgUrl: result.Image
               });
-              this.triggerEvent('finish', result.img_url);
+              this.triggerEvent('finish', result.Image);
             }).catch((err) => {
                 console.error(err);
                 wx.hideLoading();

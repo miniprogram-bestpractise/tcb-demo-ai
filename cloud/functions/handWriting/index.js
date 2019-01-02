@@ -6,11 +6,18 @@ const imgClient = new ImageClient({
 });
 
 exports.main = async (event) => {
-    const imageUrl = event.url;
-    const result = await imgClient.ocrHandWriting({
-        data: {
-            url: imageUrl,
-        }
-    });
-    return JSON.parse(result.body).data;
+  const imageUrl = event.url;
+  const result = await imgClient.ocrHandWriting({
+      data: {
+          url: imageUrl,
+      }
+  });
+    
+  const data = JSON.parse(result.body)
+  if (!data.code && data.data) {
+    return data.data
+  }
+  else {
+    return data
+  }
 };

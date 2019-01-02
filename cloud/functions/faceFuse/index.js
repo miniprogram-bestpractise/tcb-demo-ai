@@ -13,22 +13,24 @@ function get(option) {
             let length = 0;
 
             res.on('data', function (data) {
-                length += data.length;
+                length += data.length
                 body.push(data);
-            });
+            })
 
             res.on('end', function () {
-                const bodyBuffer = Buffer.concat(body, length);
-                resolve(bodyBuffer);
-            });
+                const bodyBuffer = Buffer.concat(body, length)
+                resolve(bodyBuffer)
+            })
         });
     });
 }
 
 exports.main = async (event) => {
-    const imageUrl = event.url;
-    const image = await get(imageUrl);
-    const imageBase64 = image.toString('base64');
+  const imageUrl = event.url
+  const image = await get(imageUrl)
+  const imageBase64 = image.toString('base64')
+
+  try {
     const result = await imgClient.faceFuse({
         data: {
           uin: event.uin || config.uin || '',
@@ -37,6 +39,11 @@ exports.main = async (event) => {
           img_data: imageBase64,
           rsp_img_type: 'url'
         },
-    });
-    return JSON.parse(result.body);
+    })
+
+    return JSON.parse(result)
+  }
+  catch (e) {
+    return {code: 1, message: e.message}
+  }
 };

@@ -14,8 +14,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.4.2",
-	"appid": "wxcf5102ada68a7ac9",
-	"projectname": "%E4%BA%91%E5%BC%80%E5%8F%91%E6%99%BA%E8%83%BD%E5%9B%BE%E8%B1%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88",
+	"appid": "wx5449e34426a83bdd",
+	"projectname": "tcb-demo-ai",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
