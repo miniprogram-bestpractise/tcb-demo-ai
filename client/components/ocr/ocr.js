@@ -25,7 +25,7 @@ Component({
                     const fileName = dRes.tempFilePaths[0];
                     const dotPosition = fileName.lastIndexOf('.');
                     const extension = fileName.slice(dotPosition);
-                    const cloudPath = `mileslei/${Date.now()}-${Math.floor(Math.random(0, 1) * 10000000)}${extension}`;
+                    const cloudPath = `${Date.now()}-${Math.floor(Math.random(0, 1) * 10000000)}${extension}`;
 
                     wx.cloud.uploadFile({
                         cloudPath,

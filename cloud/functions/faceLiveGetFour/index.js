@@ -14,5 +14,6 @@ exports.main = async (event, context) => {
   
   const result = await imgClient.faceLiveGetFour({})
 
+  console.log(result.body)
   return JSON.parse(result.body).data
 }

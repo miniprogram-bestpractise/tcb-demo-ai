@@ -32,9 +32,9 @@ Page({
 
     console.log(result)
 
-    if (result.LiveCode) {
+    if (result.validate_data) {
       this.setData({
-        number: result.LiveCode
+        number: result.validate_data
       }, () => {
         wx.hideLoading()
       })

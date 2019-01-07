@@ -33,11 +33,10 @@ exports.main = async (event) => {
   try {
     const result = await imgClient.faceFuse({
         data: {
-          uin: event.uin || config.uin || '',
-          project_id: event.project_id || config.project_id || '',
-          model_id: event.model_id || config.model_id || '',
-          img_data: imageBase64,
-          rsp_img_type: 'url'
+          ProjectId: event.project_id || config.project_id || '',
+          ModelId: event.model_id || config.model_id || '',
+          Image: imageBase64,
+          RspImgType: 'url'
         },
     })
 
