@@ -1,6 +1,7 @@
 <ocr>
   <view class="image-container">
-    <div class="image" style="background-image: url({{imgUrl}})"/>
+    <div wx-if="{{imgUrl && !fileID}}" class="image" style="background-image: url({{imgUrl}})"/>
+    <image wx-if="{{fileID}}" src="{{fileID}}"></image>
   </view>
   <view class="button-container">
       <button

@@ -66,9 +66,10 @@ Component({
                     return;
                 }
 
+              console.log(files[0])
                 this.setData({
-                    imgUrl: files[0].tempFileURL,
-                    hasUploaded: true
+                  fileID: files[0].fileID,
+                  hasUploaded: true
                 });
 
             }).catch(() => {

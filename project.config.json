@@ -13,7 +13,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.4.2",
+	"libVersion": "2.6.1",
 	"appid": "wx5449e34426a83bdd",
 	"projectname": "tcb-demo-ai",
 	"isGameTourist": false,
@@ -35,12 +35,27 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
+					"name": "银行卡",
+					"pathName": "pages/bankCard/bankCard",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "人脸融合",
+					"pathName": "pages/face-fusion/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
 					"name": "人脸核身",
-					"pathName": "pages/idCardLiveDetectFour/index"
+					"pathName": "pages/liveness-recognition/index",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

@@ -11,8 +11,8 @@
     "pages/bizCard/bizCard",
     "pages/tagDetect/tagDetect",
     "pages/pornDetect/pornDetect",
-    "pages/faceFuse/faceFuse",
-    "pages/idCardLiveDetectFour/index"
+    "pages/face-fusion/index",
+    "pages/liveness-recognition/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

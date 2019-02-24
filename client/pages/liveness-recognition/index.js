@@ -1,4 +1,6 @@
-const regeneratorRuntime = require('../../libs/runtime')
+import regeneratorRuntime from '../../libs/runtime'
+import TcbService from '../../libs/tcb-service-mp-sdk/index'
+const tcbService = new TcbService()
 
 Page({
 
@@ -10,7 +12,7 @@ Page({
     buttonType: 'primary',
     action: '录制',
     number: '',
-    src: null, // 'cloud://tcb-advanced-a656fc.7463-tcb-advanced-a656fc/1545643360463.mp4',
+    src: null,
     name: '',
     idcard: ''
   },
@@ -26,15 +28,16 @@ Page({
       mask: true
     })
 
-    let { result } = await wx.cloud.callFunction({
-      name: 'faceLiveGetFour'
+    let result = await tcbService.callService({
+      service: 'ai',
+      action: 'GetLiveCode'
     })
 
     console.log(result)
 
-    if (result.validate_data) {
+    if (result.data && result.data.LiveCode) {
       this.setData({
-        number: result.validate_data
+        number: result.data.LiveCode
       }, () => {
         wx.hideLoading()
       })
@@ -149,18 +152,22 @@ Page({
         })
       }
 
-      let { result } = await wx.cloud.callFunction({
-        name: 'idCardLiveDetectFour',
+      let result = await tcbService.callService({
+        service: 'ai',
+        action: 'LivenessRecognition',
         data: {
-          number: number,
-          video: src,
-          name: name,
-          idcard: idcard
+          ValidateData: number,
+          VideoFileID: src,
+          Name: name,
+          IdCard: idcard,
+          LivenessType: 'LIP'
         }
       })
 
+      console.log(result)
+
       wx.hideLoading()
-      if (!result.code && !result.data.compare_status) {
+      if (!result.code && result.data.Sim > 70) {
         wx.showToast({
           title: '验证成功',
           mask: true

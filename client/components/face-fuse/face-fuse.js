@@ -1,141 +1,121 @@
-/* global wx, Component */
+import regeneratorRuntime from '../../libs/runtime'
+import TcbService from '../../libs/tcb-service-mp-sdk/index'
+const tcbService = new TcbService()
+let customImgUrl = 'https://10.url.cn/eth/ajNVdqHZLLBn1TC6loURIX2GB5GB36NBNZtycXDXKGARFHnJwhHD8URMvyibLIRBTJrdcONEsVHc/'
+
 Component({
     data: {
-        hasUploaded: false,
+      fileID: null,
+      hasUploaded: false,
     },
 
     methods: {
-        handleUploadTap() {
-            this.uploadImage();
-        },
+      handleUploadTap() {
+        this.uploadImage();
+      },
 
-        handleRecognizeTap() {
-            this.callFunction();
-        },
+      async handleRecognizeTap() {
+        await this.callFunction();
+      },
 
-        uploadImage() {
-            wx.chooseImage({
-                success: (dRes) => {
-                    wx.showLoading({
-                        title: '上传中',
-                    });
+      uploadImage() {
+        // 重新上传，清空结果
+        this.setData({
+          customImgUrl,
+          resultImgUrl: null
+        })
 
-                    const fileName = dRes.tempFilePaths[0];
-                    const dotPosition = fileName.lastIndexOf('.');
-                    const extension = fileName.slice(dotPosition);
-                    const cloudPath = `${Date.now()}-${Math.floor(Math.random(0, 1) * 10000000)}${extension}`;
-
-                    wx.cloud.uploadFile({
-                        cloudPath,
-                        filePath: dRes.tempFilePaths[0],
-                        success: (res) => {
-                            this.setData({
-                                fileID: res.fileID,
-                            }, () => {
-                                this.getTempFileURL();
-                            });
-                        },
-                        fail: () => {
-                            wx.hideLoading();
-                            wx.showToast({
-                                title: '上传失败',
-                                icon: 'none',
-                            });
-                        },
-                    });
-                },
-            });
-        },
-
-        getTempFileURL() {
-            wx.cloud.getTempFileURL({
-                fileList: [{
-                    fileID: this.data.fileID,
-                }],
-            }).then((res) => {
-                wx.hideLoading();
-                const files = res.fileList;
-
-                if (!files.length) {
-                    wx.showToast({
-                        title: '图片上传失败',
-                        icon: 'none',
-                    });
-                    return;
-                }
-
-                this.setData({
-                    customImgUrl: files[0].tempFileURL,
-                    resultImgUrl: '',
-                    hasUploaded: true
-                });
-
-            }).catch(() => {
-                wx.hideLoading();
-                wx.showToast({
-                    title: '图片上传失败',
-                    icon: 'none',
-                });
-            });
-        },
-
-        callFunction() {
+        wx.chooseImage({
+          success: (dRes) => {
             wx.showLoading({
-                title: '融合中',
-                icon: 'none',
+                title: '上传中',
             });
 
-            wx.cloud.callFunction({
-                name: 'faceFuse',
-                data: {
-                    url: this.data.customImgUrl,
-                },
-            }).then(({ result }) => {
-              console.log(result);
-              wx.hideLoading();
-              if (!result || result.code || !result.Image) {
-                  wx.showToast({
-                      title: '融合失败: ' + result.message,
-                      icon: 'none',
-                  });
-                  return;
-              }
-              this.setData({
-                  resultImgUrl: result.Image
-              });
-              this.triggerEvent('finish', result.Image);
-            }).catch((err) => {
-                console.error(err);
+            const fileName = dRes.tempFilePaths[0]
+            const dotPosition = fileName.lastIndexOf('.')
+            const extension = fileName.slice(dotPosition)
+            const cloudPath = `${Date.now()}-${Math.floor(Math.random(0, 1) * 10000)}${extension}`
+            wx.cloud.uploadFile({
+              cloudPath,
+              filePath: dRes.tempFilePaths[0],
+              success: (res) => {
+                console.log(res)
+                this.setData({
+                  fileID: res.fileID,
+                  hasUploaded: true
+                }, () => {
+                  wx.hideLoading()
+                  // this.getTempFileURL();
+                })
+              },
+              fail: () => {
                 wx.hideLoading();
                 wx.showToast({
-                    title: '识别失败',
-                    icon: 'none',
-                });
-            });
-        },
+                  title: '上传失败',
+                  icon: 'none',
+                })
+              },
+            })
+          },
+        })
+      },
+
+      async callFunction() {
+        wx.showLoading({
+            title: '融合中',
+            icon: 'none',
+        });
+
+        try {
+          let result = await tcbService.callService({
+            service: 'ai',
+            action: 'FaceFusion',
+            data: {
+              FileID: this.data.fileID
+            }
+          })
+          wx.hideLoading();
+
+          if (!result.code && result.data.Image) {
+            this.setData({
+              resultImgUrl: result.data.Image
+            })
+          }
+          else {
+            wx.showToast({
+              title: '识别失败',
+              icon: 'none',
+            })
+          }
+        }
+        catch (e) {
+          wx.hideLoading();
+          wx.showToast({
+            title: '识别失败',
+            icon: 'none',
+          })
+          console.log(e);
+        }
+      },
     },
 
     properties: {
         uploadText: {
-            type: String,
-            value: '上传图片',
+          type: String,
+          value: '上传图片',
         },
         recognizeText: {
-            type: String,
-            value: '识别图片',
+          type: String,
+          value: '识别图片',
         },
         customImgUrl: {
-            type: String,
-            value: 'https://10.url.cn/eth/ajNVdqHZLLBn1TC6loURIX2GB5GB36NBNZtycXDXKGARFHnJwhHD8URMvyibLIRBTJrdcONEsVHc/',
+          type: String,
+          value: customImgUrl,
         },
         templateImgUrl: String,
         hideTemplate: {
-            type: Boolean,
-            value: false
-        },
-        mode: {
-            type: String,
-            value: 'idCard'
-        },
+          type: Boolean,
+          value: false
+        }
     },
 });

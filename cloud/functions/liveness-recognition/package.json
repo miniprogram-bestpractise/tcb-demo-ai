@@ -1,5 +1,5 @@
 {
-  "name": "idCardLiveDetectFour",
+  "name": "liveness-recognition",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "image-node-sdk": "^1.0.6",
     "wx-server-sdk": "latest"
   }
 }

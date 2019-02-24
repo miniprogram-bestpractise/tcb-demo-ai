@@ -1,12 +1,35 @@
 <face-fuse>
   <view wx:if="{{resultImgUrl}}" class="image-container">
-    <div class="resultImage" style="background-image: url({{resultImgUrl}})"/>
+    <image
+      class="resultImage" 
+      src="{{resultImgUrl}}"
+      mode="aspectFit"
+    >
+    </image>
   </view>
   <view wx:else class="image-container {{hideTemplate ? 'hideTemplate' : ''}}">
-    <div class="customImage" style="background-image: url({{customImgUrl}})"/>
-    <div class="templateImage" style="background-image: url({{templateImgUrl}})"/>
+    <image
+      wx:if="{{!fileID}}" 
+      class="customImage"  
+      src="{{customImgUrl}}" 
+      mode="aspectFit"
+    >
+    </image>
+    <image
+      wx:if="{{fileID}}"
+      class="customImage"
+      src="{{fileID}}"
+      mode="aspectFit"
+    >
+    </image>
+    <image
+      class="templateImage" 
+      src="{{templateImgUrl}}"
+      mode="aspectFit"
+    >
+    </image>
+    
   </view>
-  <canvas id="canvas" />
   <view class="button-container">
       <button
         type="primary"

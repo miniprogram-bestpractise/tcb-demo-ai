@@ -9,7 +9,7 @@
       <view class="weui-cells__title">人脸融合</view>
       <view class="kind-list-item">
         <navigator
-          url="/pages/faceFuse/faceFuse"
+          url="/pages/face-fusion/index"
           class="kind-list-item-hd"
         >
           <view class="kind-list-text">人脸融合</view>
@@ -106,7 +106,7 @@
       <view class="weui-cells__title">人脸核身</view>
       <view class="kind-list-item">
         <navigator
-          url="/pages/idCardLiveDetectFour/index"
+          url="/pages/liveness-recognition/index"
           class="kind-list-item-hd"
         >
           <view class="kind-list-text">活体检测--唇语验证</view>

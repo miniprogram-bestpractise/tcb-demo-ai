@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "image-node-sdk": "^1.0.5"
+    "tcb-service-sdk": "^0.0.17",
+    "wx-server-sdk": "latest"
   }
 }

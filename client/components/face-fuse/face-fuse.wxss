@@ -5,31 +5,19 @@
 .customImage {
   display: inline-block;
   width: 50%;
-  padding-bottom: 75%;
-  height: 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  height: 270px;
 }
 
 .templateImage {
   display: inline-block;
   width: 50%;
-  padding-bottom: 75%;
-  height: 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  height: 270px;
 }
 
 .resultImage {
   display: inline-block;
   width: 100%;
-  padding-bottom: 75%;
-  height: 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  height: 270px;
 }
 
 .hideTemplate .customImage {
@@ -44,10 +32,6 @@ button {
   display: inline-block;
   width: 48%;
   margin: 0 1%;
-}
-
-canvas {
-  display: none;
 }
 
 .button-container {
