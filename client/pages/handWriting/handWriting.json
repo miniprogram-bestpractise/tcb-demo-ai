@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "手写体识别",
-  "usingComponents": {
-    "ocr": "/components/ocr/ocr"
-  }
-}

@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "车牌号识别",
-  "usingComponents": {
-    "ocr": "/components/ocr/ocr"
-  }
-}

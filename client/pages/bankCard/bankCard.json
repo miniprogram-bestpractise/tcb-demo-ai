@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "银行卡识别",
-  "usingComponents": {
-    "ocr": "/components/ocr/ocr"
-  }
-}

@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "通用印刷识别",
-  "usingComponents": {
-    "ocr": "/components/ocr/ocr"
-  }
-}

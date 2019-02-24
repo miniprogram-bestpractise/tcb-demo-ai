@@ -1,7 +1,0 @@
-.form-container {
-  margin-top: 40rpx;
-}
-
-.form-container textarea {
-  padding: 10rpx;
-}

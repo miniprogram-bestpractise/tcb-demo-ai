@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "图片标签",
-  "usingComponents": {
-    "img-detect": "/components/img-detect/img-detect"
-  }
-}
