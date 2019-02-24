@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/face-fusion/index",
-    "pages/liveness-recognition/index"
+    "pages/liveness-recognition/index",
+    "pages/idcard-verification/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

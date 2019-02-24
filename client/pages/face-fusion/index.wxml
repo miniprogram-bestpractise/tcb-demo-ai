@@ -1,4 +1,8 @@
-<view>
+<import src="../common/head.wxml"/>
+<import src="../common/foot.wxml"/>
+
+<view class="container">
+  <template is="head" data="{{title}}"/>
   <face-fuse
     uploadText="上传图片"
     recognizeText="进行融合"
@@ -6,4 +10,5 @@
     templateImgUrl="https://wx4.sinaimg.cn/mw690/814a4ae9gy1frr76z8qhij20jg0t6aq0.jpg"
     bindfinish="handleFinish"
   />
+  <template is="foot" />
 </view>

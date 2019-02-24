@@ -1,5 +1,5 @@
 {
-  "name": "get-live-code",
+  "name": "GetLiveCode",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "tcb-service-sdk": "^0.0.17",
+    "tcb-service-sdk": "latest",
     "wx-server-sdk": "latest"
   }
 }

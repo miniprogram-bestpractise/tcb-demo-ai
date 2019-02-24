@@ -39,12 +39,6 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "银行卡",
-					"pathName": "pages/bankCard/bankCard",
-					"query": ""
-				},
-				{
-					"id": -1,
 					"name": "人脸融合",
 					"pathName": "pages/face-fusion/index",
 					"query": "",
@@ -54,6 +48,13 @@
 					"id": -1,
 					"name": "人脸核身",
 					"pathName": "pages/liveness-recognition/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "身份信息认证",
+					"pathName": "pages/idcard-verification/index",
 					"query": "",
 					"scene": null
 				}
