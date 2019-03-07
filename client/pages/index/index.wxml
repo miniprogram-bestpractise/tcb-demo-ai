@@ -32,7 +32,35 @@
           <view class="kind-list-text">身份信息认证</view>
         </navigator>
       </view>
-      
+
+      <!-- 人脸识别 -->
+      <view class="weui-cells__title">人脸识别</view>
+      <view class="kind-list-item">
+        <navigator
+          url="/pages/face-detect/index"
+          class="kind-list-item-hd"
+        >
+          <view class="kind-list-text">人脸检测与分析</view>
+        </navigator>
+      </view>
+
+      <!-- 文字识别（OCR） -->
+      <view class="weui-cells__title">文字识别（OCR）</view>
+      <view class="kind-list-item">
+        <navigator
+          url="/pages/ocr-general/index"
+          class="kind-list-item-hd"
+        >
+          <view class="kind-list-text">通用印刷体识别</view>
+        </navigator>
+        <navigator
+          url="/pages/ocr-idcard/index"
+          class="kind-list-item-hd"
+        >
+          <view class="kind-list-text">身份证识别</view>
+        </navigator>
+      </view>
+
     </view>
   </view>
 

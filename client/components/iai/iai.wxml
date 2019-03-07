@@ -1,0 +1,24 @@
+<iai>
+  <view class="image-container">
+    <image
+      class="image"  
+      src="{{fileID || imgUrl}}" 
+      mode="aspectFit"
+    ></image>
+  </view>
+  <view class="button-container">
+      <button
+        type="primary"
+        bindtap="handleUploadTap"
+      >
+        {{uploadText}}
+      </button>
+      <button
+        type="primary"
+        disabled="{{!hasUploaded}}"
+        bindtap="handleRecognizeTap"
+      >
+        {{recognizeText}}
+      </button>
+  </view>
+</iai>
