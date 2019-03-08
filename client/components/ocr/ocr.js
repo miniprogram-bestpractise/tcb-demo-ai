@@ -1,5 +1,4 @@
 /* global wx, Component */
-// const MODES = ['handWriting', 'idCard', 'bizLicense', 'drivingLicence', 'plate', 'general', 'bankCard', 'bizCard'];
 const MODES = ['GeneralBasicOCR', 'IDCardOCR']
 import regeneratorRuntime from '../../libs/runtime'
 import TcbService from '../../libs/tcb-service-mp-sdk/index'
