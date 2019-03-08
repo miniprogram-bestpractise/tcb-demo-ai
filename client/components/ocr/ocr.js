@@ -77,6 +77,7 @@ Component({
                 this.triggerEvent('finish', result.data);
               }
               else {
+                console.log(result);
                 wx.showToast({
                   title: '识别失败',
                   icon: 'none',
@@ -106,6 +107,9 @@ Component({
         imgUrl: {
             type: String,
             value: 'https://10.url.cn/eth/ajNVdqHZLLBn1TC6loURIX2GB5GB36NBNZtycXDXKGARFHnJwhHD8URMvyibLIRBTJrdcONEsVHc/',
+        },
+        mode: {
+          type: String,
         },
     },
 });

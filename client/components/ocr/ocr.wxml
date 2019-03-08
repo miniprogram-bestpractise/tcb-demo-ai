@@ -1,7 +1,7 @@
 <ocr>
   <view class="image-container">
     <div wx-if="{{imgUrl && !fileID}}" class="image" style="background-image: url({{imgUrl}})"/>
-    <image wx-if="{{fileID}}" src="{{fileID}}"></image>
+    <image wx-if="{{fileID}}" src="{{fileID}}" mode="aspectFit"></image>
   </view>
   <view class="button-container">
       <button
