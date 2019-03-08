@@ -9,6 +9,19 @@ Component({
   data: {
     fileID: null,
     hasUploaded: false,
+    faceRects: [],
+    resMap: {
+      Gender: '性别',
+      Age: '年龄',
+      Expression: '微笑',
+      Glass: '是否有眼镜',
+      Beauty: '魅力',
+      Hat: '是否有帽子',
+      Mask: '是否有口罩',
+      Score: '质量分',
+      Sharpness: '清晰分',
+      Brightness: '光照分',
+    },
   },
 
   methods: {
@@ -80,7 +93,11 @@ Component({
         wx.hideLoading();
 
         if (!result.code && result.data) {
-          this.triggerEvent('finish', result.data);
+          this.setData({
+            faceRects: this.getFaceRects(result.data),
+          }, () => {
+            this.triggerEvent('finish', result.data);
+          })
         }
         else {
           wx.showToast({
@@ -98,6 +115,18 @@ Component({
         console.log(e);
       }
     },
+
+    // 计算人脸位置
+    getFaceRects(res) {
+      const { ImageWidth, ImageHeight, FaceInfos } = res;
+      return FaceInfos.map(item => ({
+        ...item,
+        rectX: (item.X / ImageWidth) * 100 + '%',
+        rectY: (item.Y / ImageHeight) * 100 + '%',
+        rectWidth: (item.Width / ImageWidth) * 100 + '%',
+        rectHeight: (item.Height / ImageHeight) * 100 + '%',
+      }));
+    }
   },
 
   properties: {
