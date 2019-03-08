@@ -91,7 +91,7 @@
 |--|--|--|
 |timeStamp|Number|事件触发事件|
 |type|String|事件类型|
-|detail|Object|识别结果，参考[腾讯云文字识别 API 文档](https://cloud.tencent.com/document/product/866/17594)|
+|detail|Object|识别结果，参考[腾讯云文字识别 API 文档](https://cloud.tencent.com/document/api/866/33515)|
 
 ### img-detect 组件
 #### 属性
