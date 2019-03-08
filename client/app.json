@@ -3,7 +3,10 @@
     "pages/index/index",
     "pages/face-fusion/index",
     "pages/liveness-recognition/index",
-    "pages/idcard-verification/index"
+    "pages/idcard-verification/index",
+    "pages/face-detect/index",
+    "pages/ocr-general/index",
+    "pages/ocr-idcard/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

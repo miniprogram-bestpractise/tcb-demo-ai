@@ -62,20 +62,22 @@
 |recognizeText|识别按钮的文字|否|进行识别|
 |mode|识别模式|是|<center>-</center>|
 |imgUrl|默认图片 url|否|略|
-|type|对象类型(仅在`drivingLicence`模式中有效)|否|0|
 
 ##### mode 有效值
 
 |值|含义|对应云函数名|
 |--|--|--|
-|handWriting|手写体识别|handWriting|
+|GeneralBasicOCR|通用印刷体识别|GeneralBasicOCR|
+|IDCardOCR|身份证识别|IDCardOCR|
+
+<!-- |handWriting|手写体识别|handWriting|
 |idCard|身份证识别|idCard|
 |bizLicense|营业执照识别|bizLicense|
 |drivingLicence|行驶证驾驶证识别|drivingLicence|
 |plate|车牌号识别|plate|
 |general|通用印刷体识别|general|
 |bankCard|银行卡识别|bankCard|
-|bizCard|名片识别（V2)|bizCard|
+|bizCard|名片识别（V2)|bizCard| -->
 
 #### 事件
 
@@ -89,7 +91,7 @@
 |--|--|--|
 |timeStamp|Number|事件触发事件|
 |type|String|事件类型|
-|detail|Object|识别结果，参考[腾讯云文字识别 API 文档](https://cloud.tencent.com/document/product/866/17594)|
+|detail|Object|识别结果，参考[腾讯云文字识别 API 文档](https://cloud.tencent.com/document/api/866/33515)|
 
 ### img-detect 组件
 #### 属性
@@ -150,3 +152,32 @@
 
 #### 对应云函数
 * faceFuse
+
+### iai 组件
+#### 属性
+
+|属性名|含义|必填|默认值|
+|--|--|--|--|
+|uploadText|上传按钮的文字|否|上传人脸|
+|recognizeText|识别按钮的文字|否|识别人脸|
+|imgUrl|默认图片 url|否|略|
+|mode|识别模式|是|<center>-</center>|
+
+##### mode 有效值
+|值|含义|对应云函数名|
+|--|--|--|
+|DetectFace|人脸检测与分析|DetectFace|
+
+#### 事件
+
+|事件名|触发条件|
+|--|--|
+|finish|识别完成|
+
+##### finish 事件对象属性
+
+|属性|类型|说明|
+|--|--|--|
+|timeStamp|Number|事件触发事件|
+|type|String|事件类型|
+|detail|Object|识别结果，[腾讯云人脸识别 API 文档](https://cloud.tencent.com/document/product/867/32800)|

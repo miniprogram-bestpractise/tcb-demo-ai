@@ -1,5 +1,9 @@
 /* global wx, Component */
-const MODES = ['handWriting', 'idCard', 'bizLicense', 'drivingLicence', 'plate', 'general', 'bankCard', 'bizCard'];
+// const MODES = ['handWriting', 'idCard', 'bizLicense', 'drivingLicence', 'plate', 'general', 'bankCard', 'bizCard'];
+const MODES = ['GeneralBasicOCR', 'IDCardOCR']
+import regeneratorRuntime from '../../libs/runtime'
+import TcbService from '../../libs/tcb-service-mp-sdk/index'
+const tcbService = new TcbService()
 
 Component({
     data: {
@@ -11,8 +15,8 @@ Component({
             this.uploadImage();
         },
 
-        handleRecognizeTap() {
-            this.callFunction();
+        async handleRecognizeTap() {
+            await this.callFunction();
         },
 
         uploadImage() {
@@ -32,9 +36,10 @@ Component({
                         filePath: dRes.tempFilePaths[0],
                         success: (res) => {
                             this.setData({
-                                fileID: res.fileID,
+                              fileID: res.fileID,
+                              hasUploaded: true
                             }, () => {
-                                this.getTempFileURL();
+                              wx.hideLoading()
                             });
                         },
                         fail: () => {
@@ -49,39 +54,7 @@ Component({
             });
         },
 
-        getTempFileURL() {
-            wx.cloud.getTempFileURL({
-                fileList: [{
-                    fileID: this.data.fileID,
-                }],
-            }).then((res) => {
-                wx.hideLoading();
-                const files = res.fileList;
-
-                if (!files.length) {
-                    wx.showToast({
-                        title: '图片上传失败',
-                        icon: 'none',
-                    });
-                    return;
-                }
-
-              console.log(files[0])
-                this.setData({
-                  fileID: files[0].fileID,
-                  hasUploaded: true
-                });
-
-            }).catch(() => {
-                wx.hideLoading();
-                wx.showToast({
-                    title: '图片上传失败',
-                    icon: 'none',
-                });
-            });
-        },
-
-        callFunction() {
+        async callFunction() {
             wx.showLoading({
                 title: '识别中',
                 icon: 'none',
@@ -90,31 +63,35 @@ Component({
             let funcName = this.data.mode;
             if (MODES.indexOf(funcName) === -1) throw new Error(`未知识别模式: ${funcName}`);
 
-            wx.cloud.callFunction({
-                name: funcName,
-                data: {
-                    url: this.data.imgUrl,
-                    type: this.data.type
-                },
-            }).then(({ result }) => {
+            try {
+              let result = await tcbService.callService({
+                  service: 'ai',
+                  action: funcName,
+                  data: {
+                    FileID: this.data.fileID
+                  }
+              })
+              wx.hideLoading();
+
+              if (!result.code && result.data) {
+                this.triggerEvent('finish', result.data);
+              }
+              else {
                 console.log(result);
-                wx.hideLoading();
-                if (!result || result.code) {
-                    wx.showToast({
-                        title: '识别失败: ' + result.message,
-                        icon: 'none'
-                    });
-                    return;
-                }
-                this.triggerEvent('finish', result);
-            }).catch((err) => {
-                console.error(err);
-                wx.hideLoading();
                 wx.showToast({
-                    title: '识别失败',
-                    icon: 'none',
-                });
-            });
+                  title: '识别失败',
+                  icon: 'none',
+                })
+              }
+            }
+            catch (e) {
+              wx.hideLoading();
+              wx.showToast({
+                title: '识别失败',
+                icon: 'none',
+              })
+              console.log(e);
+            }
         },
     },
 
@@ -132,12 +109,7 @@ Component({
             value: 'https://10.url.cn/eth/ajNVdqHZLLBn1TC6loURIX2GB5GB36NBNZtycXDXKGARFHnJwhHD8URMvyibLIRBTJrdcONEsVHc/',
         },
         mode: {
-            type: String,
-            value: 'idCard'
-        },
-        type: {
-            type: Number,
-            value: 0
+          type: String,
         },
     },
 });

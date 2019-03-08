@@ -1,7 +1,10 @@
-<ocr>
+<iai>
   <view class="image-container">
-    <div wx-if="{{imgUrl && !fileID}}" class="image" style="background-image: url({{imgUrl}})"/>
-    <image wx-if="{{fileID}}" src="{{fileID}}" mode="aspectFit"></image>
+    <image
+      class="image"  
+      src="{{fileID || imgUrl}}" 
+      mode="aspectFit"
+    ></image>
   </view>
   <view class="button-container">
       <button
@@ -18,4 +21,4 @@
         {{recognizeText}}
       </button>
   </view>
-</ocr>
+</iai>
