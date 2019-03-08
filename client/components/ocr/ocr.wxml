@@ -21,7 +21,7 @@
   </view>
 
   <!-- 通用文本信息 -->
-  <block wx:if="{{ ['GeneralBasicOCR', 'GeneralFastOCR'].includes(mode) }}">
+  <block wx:if="{{ mode ==='GeneralBasicOCR' || mode === 'GeneralFastOCR' }}">
     <view class="result" wx:if="{{result && result.TextDetections.length}}">
       <view class="weui-cells__title">识别结果：</view>
       <view class="weui-cells">
@@ -35,7 +35,7 @@
     </view>
   </block>
   <!-- 身份证信息 -->
-  <block wx:else-if="{{ ['IDCardOCR'].includes(mode) }}">
+  <block wx:elif="{{ mode === 'IDCardOCR' }}">
     <view class="result" wx:if="{{result}}">
       <view class="weui-cells__title">识别结果：</view>
       <view class="weui-cells">
