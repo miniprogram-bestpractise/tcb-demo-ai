@@ -41,9 +41,9 @@
       <view class="weui-cells">
         <view class="weui-cell" wx:for="{{result}}" wx:key="*this" wx:for-index="key" wx:if="{{ idcardResMap[key] && item }}">
             <view class="weui-cell__bd">
-                <p>{{ idcardResMap[key] }}</p>
+                <p>{{ idcardResMap[key].label }}</p>
             </view>
-            <view class="weui-cell__ft">{{ item }}</view>
+            <view class="weui-cell__ft">{{ idcardResMap[key].valMap['item'] || item }}</view>
         </view>
       </view>
     </view>

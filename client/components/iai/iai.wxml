@@ -41,10 +41,10 @@
       <block wx:for="{{ ['FaceAttributesInfo', 'FaceQualityInfo'] }}" wx:key="*this" wx:for-item="attr">
         <view class="weui-cell" wx:for="{{face[attr]}}" wx:key="*this" wx:for-index="key" wx:if="{{resMap[key]}}">
             <view class="weui-cell__bd">
-                <p>{{ resMap[key] }}</p>
+                <p>{{ resMap[key].label }}</p>
             </view>
-            <view class="weui-cell__ft" wx:if="{{item === true || item === false}}">{{ item ? '是' : '否' }}</view>
-            <view class="weui-cell__ft" wx:else>{{ item }}</view>
+            <view class="weui-cell__ft" wx:if="{{ item === true || item === false }}">{{ item ? '是' : '否' }}</view>
+            <view class="weui-cell__ft" wx:else>{{ resMap[key].valMap[item] || item }}</view>
         </view>
       </block>
     </view>
