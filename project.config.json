@@ -35,7 +35,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
@@ -55,6 +55,27 @@
 					"id": 2,
 					"name": "身份信息认证",
 					"pathName": "pages/idcard-verification/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "人脸检测与分析",
+					"pathName": "pages/face-detect/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "通用印刷体识别",
+					"pathName": "pages/ocr-general/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "身份证识别",
+					"pathName": "pages/ocr-idcard/index",
 					"query": "",
 					"scene": null
 				}

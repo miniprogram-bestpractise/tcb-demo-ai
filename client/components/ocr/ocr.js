@@ -7,6 +7,17 @@ const tcbService = new TcbService()
 Component({
     data: {
         hasUploaded: false,
+        result: null,
+        idcardResMap: {
+          Name: { label: '姓名' },
+          Sex: { label: '性别' },
+          Nation: { label: '民族' },
+          Birth: { label: '出生日期' },
+          Address: { label: '地址' },
+          IdNum: { label: '身份证号' },
+          Authority: { label: '发证机关' },
+          ValidDate: { label: '证件有效期' },
+        },
     },
 
     methods: {
@@ -73,7 +84,11 @@ Component({
               wx.hideLoading();
 
               if (!result.code && result.data) {
-                this.triggerEvent('finish', result.data);
+                this.setData({
+                  result: result.data,
+                }, () => {
+                  this.triggerEvent('finish', result.data);
+                });
               }
               else {
                 console.log(result);
