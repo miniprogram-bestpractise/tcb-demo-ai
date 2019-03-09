@@ -30,6 +30,11 @@ Component({
         },
 
         uploadImage() {
+            // 重新上传，清空结果
+            this.setData({
+              result: null,
+            })
+
             wx.chooseImage({
                 success: (dRes) => {
                     wx.showLoading({

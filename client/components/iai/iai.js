@@ -43,6 +43,7 @@ Component({
       // 重新上传，清空结果
       this.setData({
         imgUrl,
+        faceRects: [],
       })
 
       wx.chooseImage({
