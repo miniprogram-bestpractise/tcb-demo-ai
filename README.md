@@ -8,7 +8,10 @@
 
 ## 体验
 
-敬请期待
+<p align="center">
+    <img src="https://main.qcloudimg.com/raw/fb6e0a10f9870824e19b06170f4ed558.png" width="500px">
+    <p align="center">扫码体验</p>
+</p>
 
 ## 使用组件
 
@@ -30,10 +33,7 @@
 
 ```xml
 <ocr
-    uploadText="上传图片"
-    recognizeText="进行识别"
-    mode="general"
-    imgUrl="https://10.url.cn/eth/ajNVdqHZLLBn1TC6loURIX2GB5GB36NBNZtycXDXKGARFHnJwhHD8URMvyibLIRBTJrdcONEsVHc/"
+    mode="GeneralBasicOCR"
     bindfinish="handleFinish"
 />
 ```
@@ -70,15 +70,6 @@
 |GeneralBasicOCR|通用印刷体识别|GeneralBasicOCR|
 |IDCardOCR|身份证识别|IDCardOCR|
 
-<!-- |handWriting|手写体识别|handWriting|
-|idCard|身份证识别|idCard|
-|bizLicense|营业执照识别|bizLicense|
-|drivingLicence|行驶证驾驶证识别|drivingLicence|
-|plate|车牌号识别|plate|
-|general|通用印刷体识别|general|
-|bankCard|银行卡识别|bankCard|
-|bizCard|名片识别（V2)|bizCard| -->
-
 #### 事件
 
 |事件名|触发条件|
@@ -92,36 +83,6 @@
 |timeStamp|Number|事件触发事件|
 |type|String|事件类型|
 |detail|Object|识别结果，参考[腾讯云文字识别 API 文档](https://cloud.tencent.com/document/api/866/33515)|
-
-### img-detect 组件
-#### 属性
-
-|属性名|含义|必填|默认值|
-|--|--|--|--|
-|uploadText|上传按钮的文字|否|上传图片|
-|recognizeText|识别按钮的文字|否|进行识别|
-|mode|识别模式|是|<center>-</center>|
-|imgUrl|默认图片 url|否|略|
-
-##### mode 有效值
-|值|含义|对应云函数名|
-|--|--|--|
-|pornDetect|图片鉴黄|pornDetect|
-|tagDetect|图片标签识别|tagDetect|
-
-#### 事件
-
-|事件名|触发条件|
-|--|--|
-|finish|识别完成|
-
-##### finish 事件对象属性
-
-|属性|类型|说明|
-|--|--|--|
-|timeStamp|Number|事件触发事件|
-|type|String|事件类型|
-|detail|Object|识别结果，参考[腾讯云图片标签 API 文档](https://cloud.tencent.com/document/product/865/17592)以及[腾讯云智能鉴黄 API 文档](https://cloud.tencent.com/document/product/864/17609)|
 
 ### face-fuse 组件
 #### 属性
@@ -151,7 +112,7 @@
 |detail|String|融合结果图片 url|
 
 #### 对应云函数
-* faceFuse
+* FaceFusion
 
 ### iai 组件
 #### 属性
