@@ -17,6 +17,9 @@
 	"appid": "wx5449e34426a83bdd",
 	"projectname": "tcb-demo-ai",
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {
 		"search": {
 			"current": -1,

@@ -14,5 +14,6 @@
     "navigationBarTitleText": "云开发智能图像",
     "navigationBarTextStyle": "black"
   },
-  "cloud": true
+  "cloud": true,
+  "sitemapLocation": "sitemap60.json"
 }
