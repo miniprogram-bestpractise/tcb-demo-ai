@@ -1,5 +1,5 @@
 /* global wx, Component */
-const MODES = ['DetectFace']
+const MODES = ['tcbService-ai-detectFace']
 import regeneratorRuntime from '../../libs/runtime'
 import TcbService from '../../libs/tcb-service-mp-sdk/index'
 const tcbService = new TcbService()
