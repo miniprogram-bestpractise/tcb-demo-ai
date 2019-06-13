@@ -44,7 +44,7 @@
                 <p>{{ resMap[key].label }}</p>
             </view>
             <view class="weui-cell__ft" wx:if="{{ item === true || item === false }}">{{ item ? '是' : '否' }}</view>
-            <view class="weui-cell__ft" wx:else>{{ resMap[key].valMap[item] || item }}</view>
+            <view class="weui-cell__ft" wx:else>{{ resMap[key].valMap && resMap[key].valMap[item > 50 ? '1' : '0'] || item }}</view>
         </view>
       </block>
     </view>

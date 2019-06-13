@@ -13,6 +13,19 @@
         </navigator>
       </view>
     </view>
+    <view class="weui-cells__title">人脸融合</view>
+    <view class="kind-list-item">
+      <navigator url="/pages/face-fusion/index" class="kind-list-item-hd">
+        <view class="kind-list-text">人脸融合</view>
+      </navigator>
+    </view>
+    <!-- 人脸核身 -->
+    <view class="weui-cells__title">人脸核身</view>
+    <view class="kind-list-item">
+      <navigator url="/pages/idcard-verification/index" class="kind-list-item-hd">
+        <view class="kind-list-text">身份信息认证</view>
+      </navigator>
+    </view>
   </view>
   <view class="index-bd">
     <view class="index-desc">开发教程及源码：</view>
