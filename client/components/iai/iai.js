@@ -107,10 +107,7 @@ Component({
           })
         }
         else {
-          wx.showToast({
-            title: '识别失败',
-            icon: 'none',
-          })
+          throw result
         }
       }
       catch (e) {

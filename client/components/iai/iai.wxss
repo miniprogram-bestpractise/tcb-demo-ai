@@ -31,12 +31,13 @@ button {
   top: 100%;
   left: -1px;
   color: #fff;
-  width: 105rpx;
+  width: 120rpx;
   padding: 4rpx 16rpx;
   background: rgba(26, 173, 25, 0.5);
   display: flex;
   flex-direction: column; 
   justify-content: space-between;
+  text-align: center;
 }
 .face-result-text text {
   height: 36rpx;

@@ -12,7 +12,7 @@
         class="face-result-item"
         style="left:{{item.rectX}};top:{{item.rectY}};height:{{item.rectHeight}};width:{{item.rectWidth}};">
         <view class="face-result-text">
-          <text>颜值 {{ item.FaceQualityInfo.Score }} 分</text>
+          <text>颜值 {{ item.FaceAttributesInfo.Beauty }} 分</text>
           <text>年龄 {{ item.FaceAttributesInfo.Age }} 岁</text>
         </view>
       </view>
