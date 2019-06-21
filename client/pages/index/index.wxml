@@ -8,7 +8,7 @@
       <!-- 人脸识别 -->
       <view class="weui-cells__title">人脸识别</view>
       <view class="kind-list-item">
-        <navigator url="/pages/face-detect/index" class="kind-list-item-hd">
+        <navigator url="/pages/face-detect/index/index" class="kind-list-item-hd">
           <view class="kind-list-text">人脸检测与分析</view>
         </navigator>
       </view>
@@ -30,6 +30,7 @@
   <view class="index-bd">
     <view class="index-desc">开发教程及源码：</view>
     <view class="index-desc">https://github.com/TencentCloudBase/mp-book</view>
+    <view class="index-desc" style="text-align:center; margin-top:20rpx">搜索小程序云开发了解更多实现细节</view>
   </view>
   <official-account></official-account>
 </view>

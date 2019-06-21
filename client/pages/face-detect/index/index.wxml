@@ -1,0 +1,33 @@
+<view class="index">
+  <view class="index-hd">
+    <image class="index-logo" src="/resources/images/tencentcloud.png"></image>
+    <view class="index-desc">以下将演示基于小程序·云开发所研发的人脸检测与分析解决方案</view>
+  </view>
+  <view class="index-bd">
+    <view class="kind-list">
+      <view class="weui-cells__title">能力展示</view>
+      <view class="kind-list-item">
+        <navigator url="/pages/face-detect/detect/index" class="kind-list-item-hd">
+          <view class="kind-list-text">人脸检测与分析</view>
+        </navigator>
+      </view>
+      <view class="weui-cells__title">应用场景</view>
+      <view class="kind-list-item">
+        <navigator url="/pages/face-detect/clip/index" class="kind-list-item-hd">
+          <view class="kind-list-text">智能裁剪</view>
+        </navigator>
+      </view>
+      <view class="kind-list-item">
+        <navigator url="/pages/face-detect/smooth/index" class="kind-list-item-hd">
+          <view class="kind-list-text">隐私保护</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view class="index-bd">
+    <view class="index-desc">开发教程及源码：</view>
+    <view class="index-desc">https://github.com/TencentCloudBase/mp-book</view>
+    <view class="index-desc" style="text-align:center; margin-top:20rpx">搜索小程序云开发了解更多实现细节</view>
+  </view>
+  <official-account></official-account>
+</view>

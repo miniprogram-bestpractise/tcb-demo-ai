@@ -1,0 +1,9 @@
+@import "../../../components/iai/iai.wxss";
+
+.form-container {
+  margin-top: 40rpx;
+}
+
+.image-container canvas {
+  width: 100%;
+}

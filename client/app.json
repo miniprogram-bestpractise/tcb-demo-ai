@@ -1,10 +1,13 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/face-detect/index/index",
+    "pages/face-detect/detect/index",
+    "pages/face-detect/clip/index",
+    "pages/face-detect/smooth/index",
     "pages/face-fusion/index",
     "pages/liveness-recognition/index",
     "pages/idcard-verification/index",
-    "pages/face-detect/index",
     "pages/ocr-general/index",
     "pages/ocr-idcard/index"
   ],

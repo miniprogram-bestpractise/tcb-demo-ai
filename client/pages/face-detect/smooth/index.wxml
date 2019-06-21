@@ -1,0 +1,15 @@
+<import src="../../common/head.wxml" />
+<import src="../../common/foot.wxml" />
+<view class="container">
+  <template is="head" data="{{title,desc}}" />
+  <view class="image-container" style="width: {{containerWidth}}rpx;">
+    <image class="image" src="{{fileID||temUrl||thumb}}" mode="widthFix"></image>
+  </view>
+  <view class="button-container">
+    <button type="primary" bindtap="handleUploadTap">上传图片</button>
+  </view>
+  <view class="image-container" style="width: {{containerWidth}}rpx">
+    <canvas canvas-id="canvas" style="height: {{containerHeight}}rpx" class="canvas"></canvas>
+  </view>
+  <template is="foot" />
+</view>

@@ -1,0 +1,15 @@
+@import "../../../components/iai/iai.wxss";
+
+.form-container {
+  margin-top: 40rpx;
+}
+
+.preview-container {
+  margin-top: 50rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.preview-container canvas {
+  background: center / contain no-repeat #eee;
+}
