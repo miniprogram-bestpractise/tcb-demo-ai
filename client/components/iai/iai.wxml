@@ -12,7 +12,7 @@
         class="face-result-item"
         style="left:{{item.rectX}};top:{{item.rectY}};height:{{item.rectHeight}};width:{{item.rectWidth}};">
         <view class="face-result-text">
-          <text>颜值 {{ item.FaceQualityInfo.Score }} 分</text>
+          <text>颜值 {{ item.FaceAttributesInfo.Beauty }} 分</text>
           <text>年龄 {{ item.FaceAttributesInfo.Age }} 岁</text>
         </view>
       </view>
@@ -44,7 +44,7 @@
                 <p>{{ resMap[key].label }}</p>
             </view>
             <view class="weui-cell__ft" wx:if="{{ item === true || item === false }}">{{ item ? '是' : '否' }}</view>
-            <view class="weui-cell__ft" wx:else>{{ resMap[key].valMap[item] || item }}</view>
+            <view class="weui-cell__ft" wx:else>{{ resMap[key].valMap && resMap[key].valMap[item > 50 ? '1' : '0'] || item }}</view>
         </view>
       </block>
     </view>

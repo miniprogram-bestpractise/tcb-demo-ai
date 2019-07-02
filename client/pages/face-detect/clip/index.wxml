@@ -1,0 +1,15 @@
+<import src="../../common/head.wxml" />
+<import src="../../common/foot.wxml" />
+<view class="container">
+  <template is="head" data="{{title,desc}}"  />
+  <view class="image-container">
+    <image class="image" src="{{fileID || thumb}}" mode="widthFix"></image>
+  </view>
+  <view class="button-container">
+    <button type="primary" bindtap="handleUploadTap">上传图片</button>
+  </view>
+  <view class="preview-container">
+    <canvas wx:for="{{clipSizes}}" wx:for-item="size" wx:key="{{size[0]/size[1]}}" style="width: {{size[0]}}rpx; height: {{size[1]}}rpx; background-image: url({{thumb}})" canvas-id="canvas-{{size[0]/size[1]}}" class="canvas"></canvas>
+  </view>
+  <template is="foot" />
+</view>
