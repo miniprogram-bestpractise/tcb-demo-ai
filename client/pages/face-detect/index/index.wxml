@@ -22,6 +22,11 @@
           <view class="kind-list-text">隐私保护</view>
         </navigator>
       </view>
+      <view class="kind-list-item">
+        <navigator url="/pages/face-detect/compliance/index" class="kind-list-item-hd">
+          <view class="kind-list-text">合规检查</view>
+        </navigator>
+      </view>
     </view>
   </view>
   <view class="index-bd">
