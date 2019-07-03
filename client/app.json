@@ -5,6 +5,7 @@
     "pages/face-detect/detect/index",
     "pages/face-detect/clip/index",
     "pages/face-detect/smooth/index",
+    "pages/face-detect/compliance/index",
     "pages/face-fusion/index",
     "pages/liveness-recognition/index",
     "pages/idcard-verification/index",

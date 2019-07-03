@@ -1,0 +1,32 @@
+<import src="../../common/head.wxml" />
+<import src="../../common/foot.wxml" />
+<view class="container">
+  <template is="head" data="{{title,desc}}"  />
+  <view class="image-container">
+    <image class="image" src="{{fileID || thumb}}" mode="widthFix"></image>
+  </view>
+  <view class="button-container">
+    <button type="primary" bindtap="handleUploadTap">上传图片</button>
+  </view>
+  <view class="preview-container" wx:if="{{resultDetail && resultDetail.length}}">
+    <view class="weui-cells__title">分析结果：</view>
+    <view class="preview-icon">
+      <icon wx:if="{{result}}" type="success_no_circle" size="120" />
+      <icon wx:else type="warn" size="120" />
+    </view>
+    <view class="weui-cells">
+      <view class="weui-cell" wx:for="{{resultDetail}}" wx:key="*this">
+        <view class="weui-cell__bd">
+            <p>{{ item.label }}</p>
+        </view>
+        <view class="weui-cell__ft">
+          <block wx:if="{{ item.value === true || item.value === false }}">{{ item.value ? '是' : '否' }}</block>
+          <block wx:else>{{ item.value }}</block>
+           <icon wx:if="{{item.compliance}}" type="success" size="20" />
+           <icon wx:else type="warn" size="20" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <template is="foot" />
+</view>

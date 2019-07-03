@@ -5,7 +5,7 @@
       src="{{fileID || imgUrl}}" 
       mode="widthFix"
     ></image>
-    <block wx:if="faceRects && faceRects.length">
+    <block wx:if="{{faceRects && faceRects.length}}">
       <view
         wx:for="{{faceRects}}"
         wx:key="*this"
